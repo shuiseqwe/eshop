@@ -110,7 +110,7 @@ public class SubcategoryAction {
 			
 			productList.add(p);
 		}
-		
+		this.req.setAttribute("pager", pager);
 		this.req.setAttribute("productList", productList);
 
 		return result;

@@ -25,8 +25,13 @@ public class Pager {
 	}
 	
 	//当前页第一条记录在数据库的编号：以0开始的
+	private int firstRow;
 	public int getFirstRow(){
 		return (this.currentPage-1)*this.pageRows;
+	}
+	private int lastRow;
+	public int getLastRow(){
+		return this.getFirstRow()+this.pageRows;
 	}
 
 	public int getTotalRows() {
@@ -57,11 +62,11 @@ public class Pager {
 		return pageCount;
 	}
 	
-	public boolean hasPrev(){
+	public boolean isHasPrev(){
 		return this.currentPage-1>0;
 	}
 	
-	public boolean hasNext(){
+	public boolean isHasNext(){
 		return this.currentPage+1<=this.pageCount;
 	}
 	
